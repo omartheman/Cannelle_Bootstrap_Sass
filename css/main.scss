@@ -1,0 +1,44 @@
+$backgroundCol: #5422d4;
+$royal:  #801C9B;
+$gold: rgb(255, 219, 101);
+$dark: #343a40;
+
+// Funktionen "text-background-color" anpassar textfärgen till ljusheten av bakgrunden. 
+@function text-background-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+body {
+  background-color: $backgroundCol;
+  color: white;
+}
+h1 {
+  color: text-background-color($backgroundCol)
+}
+h1, h2 { 
+  text-align: center; 
+}
+nav {
+  background-color: $royal;
+}
+.border-sun {
+  border: 2px solid $gold;
+}
+// $ container-sun finns för att spara flera bootstrap-klasser $
+.container-sun {
+  @extend
+   .border-sun;
+  background-color: white;
+  border-radius: 10px;
+  color: $dark;
+  @media (min-width: 990px) {
+    width: 720px;
+  }
+}
+.navbar-toggler {
+  border: 2px solid white;
+}

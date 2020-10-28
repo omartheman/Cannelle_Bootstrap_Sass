@@ -1,0 +1,37 @@
+body {
+  background-color: #5422d4;
+  color: white;
+}
+
+h1 {
+  color: #fff;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+nav {
+  background-color: #801C9B;
+}
+
+.border-sun, .container-sun {
+  border: 2px solid #ffdb65;
+}
+
+.container-sun {
+  background-color: white;
+  border-radius: 10px;
+  color: #343a40;
+}
+
+@media (min-width: 990px) {
+  .container-sun {
+    width: 720px;
+  }
+}
+
+.navbar-toggler {
+  border: 2px solid white;
+}
+/*# sourceMappingURL=main.css.map */

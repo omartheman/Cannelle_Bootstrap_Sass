@@ -3,6 +3,22 @@ body {
   color: white;
 }
 
+footer {
+  background-color: #801C9B;
+  border-top: 2px solid #ffdb65;
+  height: 200px;
+  margin-top: 100px;
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #ffdb65;
+}
+
 h1 {
   color: #fff;
 }
@@ -13,6 +29,7 @@ h1, h2 {
 
 nav {
   background-color: #801C9B;
+  border-bottom: 2px solid #ffdb65;
 }
 
 .border-sun, .container-sun {

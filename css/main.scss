@@ -1,6 +1,7 @@
+// $ Försöker använda variabelnamn som inte har direkt att göra med färgen (t.ex. inte använda "guld"), så att om man ändrar färgen, är det inte helt konstigt $
 $backgroundCol: #5422d4;
 $royal:  #801C9B;
-$gold: rgb(255, 219, 101);
+$sun: rgb(255, 219, 101);
 $dark: #343a40;
 
 // Funktionen "text-background-color" anpassar textfärgen till ljusheten av bakgrunden. 
@@ -16,6 +17,19 @@ body {
   background-color: $backgroundCol;
   color: white;
 }
+footer {
+  background-color: $royal;
+  border-top: 2px solid $sun; 
+  height: 200px;
+  margin-top: 100px;
+  a {
+    color: white;
+    text-decoration: underline;
+    &:hover {
+      color: $sun;
+    }
+  }
+}
 h1 {
   color: text-background-color($backgroundCol)
 }
@@ -24,9 +38,10 @@ h1, h2 {
 }
 nav {
   background-color: $royal;
+  border-bottom: 2px solid $sun;
 }
 .border-sun {
-  border: 2px solid $gold;
+  border: 2px solid $sun;
 }
 // $ container-sun finns för att spara flera bootstrap-klasser $
 .container-sun {

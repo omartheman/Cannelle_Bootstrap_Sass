@@ -4,12 +4,32 @@ $royal:  #801C9B;
 $sun: rgb(255, 219, 101);
 $dark: #343a40;
 
-// Funktionen "text-background-color" anpassar textfärgen till ljusheten av bakgrunden. 
-@function text-background-color($color) {
+// Funktionen "textCol" anpassar textfärgen till ljusheten av bakgrunden. 
+@function textCol($color) {
   @if (lightness($color) > 50) {
     @return #000;
   } @else {
     @return #fff;
+  }
+}
+@function linkHovCol($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return $sun;
+  }
+}
+//följande mixin gör att man kan lägga till en bakgrundsfärg, och få textfärgen anspassad till svart eller vit automatiskt med textCol funktionen
+@mixin textBG($color){ 
+  background-color: $color;
+  color: textCol($color);
+  //Att ha '& a' gör att Sass färgar även länkar baserat på parents bakgrundfärg
+  & a {
+    color: textCol($color);
+    text-decoration: underline;
+    &:hover {
+      color: linkHovCol($color)
+    }
   }
 }
 
@@ -31,7 +51,7 @@ footer {
   }
 }
 h1 {
-  color: text-background-color($backgroundCol)
+  color: textCol($backgroundCol)
 }
 h1, h2 { 
   text-align: center; 
@@ -44,12 +64,22 @@ nav {
   border: 2px solid $sun;
 }
 // $ container-sun finns för att spara flera bootstrap-klasser $
+
 .container-sun {
   @extend
    .border-sun;
   background-color: white;
   border-radius: 10px;
   color: $dark;
+  @media (min-width: 990px) {
+    width: 720px;
+  }
+}
+.container-moon {
+  @extend
+   .border-sun;
+  @include textBG($royal);
+  border-radius: 10px;
   @media (min-width: 990px) {
     width: 720px;
   }

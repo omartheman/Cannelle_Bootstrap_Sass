@@ -39,10 +39,6 @@ const navbar = `
       <a class="nav-link" href="contact.html">Contact</a>
     </li>
   </ul>
-  <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
 </div>
 </nav>`;
 const footer = `
@@ -55,8 +51,16 @@ const footer = `
   </div>
 </div>
 </footer>`;
+const header = `
+<header>
+<div class="row">
+  <img src="web-ready-pics/paint.jpg" alt="paint" class="w-100">
+</div>
+</header>
+`;
 
 const body = document.querySelector('body');
 const main = document.querySelector('main');
+body.insertAdjacentHTML('afterbegin', header);
 body.insertAdjacentHTML('afterbegin', navbar);
 main.insertAdjacentHTML('afterend', footer);

@@ -1,3 +1,23 @@
+.container-highlighted {
+  border-radius: 10px;
+  background-color: #ffe8a3;
+  color: #000;
+  border: 2px solid #e600ff;
+}
+
+.container-highlighted a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.container-highlighted a:hover {
+  color: #000;
+}
+
+.container-highlighted h3 {
+  text-align: center;
+}
+
 body {
   background-color: #5422d4;
   color: white;

@@ -32,6 +32,26 @@ $dark: #343a40;
     }
   }
 }
+// denna funktion bestämmer border färgen baserat på containers bakgrundsfärg.
+@function borderCol($color) {
+  @if (lightness($color) > 50) {
+    @return #e600ff;
+  } @else {
+    @return $sun;
+  }
+}
+// Denna mixin kan användas för att skapa ett nytt container med en ny bakgrundsfärg
+@mixin newContainer($BGcolor) {
+  border-radius: 10px;
+  @include textBG($BGcolor);
+  border: 2px solid borderCol($BGcolor); 
+}
+.container-highlighted {
+  @include newContainer(#ffe8a3);
+  h3 {
+    text-align: center;
+  }
+}
 
 body {
   background-color: $backgroundCol;
@@ -65,6 +85,7 @@ nav {
 }
 // $ container-sun finns för att spara flera bootstrap-klasser $
 
+//create a function that spits out .container-${var} {}, so you can color the container
 .container-sun {
   @extend
    .border-sun;
